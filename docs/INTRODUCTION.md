@@ -1,5 +1,9 @@
 # Introduction — Paper 2: What Do the Connectome GNNs Learn? (Interpretability)
 
+![Concept figure: a trained connectome GNN interrogated by gradient-based and perturbation-based attribution, producing ranked wiring motifs validated by ablation](figures/concept_figure.svg)
+
+*Figure 1. The Paper 2 pipeline at a glance: a trained GNN maps wiring to tuning predictions; two attribution methods (integrated gradients, explainer masks) score every synapse; scores aggregate into ranked motifs that are validated by ablation and compared with published wiring rules. (Mermaid fallback: `figures/concept_figure.md`.)*
+
 **Series note:** This is **Paper 2 of 4** in the MICrONS function-from-wiring series. **It builds directly on Paper 1** (`microns-tuning-from-wiring-benchmark`): Paper 1's trained models, fixed splits, and baseline features are the objects of analysis here. Papers 3–4 reuse this paper's motif attribution results.
 
 ## Background
