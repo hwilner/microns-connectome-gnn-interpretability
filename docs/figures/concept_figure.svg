@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+<marker id="ah" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#3f4750"/>
+</marker>
+</defs>
+<rect width="1536" height="1024" fill="white"/>
+<rect x="40" y="70" width="320" height="260" rx="16" fill="#dbeafe" stroke="#3f4750" stroke-width="2"/>
+<text x="200" y="106.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#222" text-anchor="middle" font-weight="bold">Connectome graph</text>
+<line x1="260.5" y1="212.5" x2="244.7" y2="250.4" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="244.7" y1="250.4" x2="190.1" y2="270.4" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="190.1" y1="270.4" x2="162.5" y2="262.7" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="162.5" y1="262.7" x2="139.5" y2="214.7" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="139.5" y1="214.7" x2="153.8" y2="178.8" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="153.8" y1="178.8" x2="192.5" y2="160.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="192.5" y1="160.3" x2="240.5" y2="191.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="240.5" y1="191.2" x2="260.5" y2="212.5" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="260.5" y1="212.5" x2="162.5" y2="262.7" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="190.1" y1="270.4" x2="153.8" y2="178.8" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="139.5" y1="214.7" x2="240.5" y2="191.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="244.7" y1="250.4" x2="192.5" y2="160.3" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="260.5" cy="212.5" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="244.7" cy="250.4" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="190.1" cy="270.4" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="162.5" cy="262.7" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="139.5" cy="214.7" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="153.8" cy="178.8" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="192.5" cy="160.3" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="240.5" cy="191.2" r="8.5" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<rect x="430" y="70" width="380" height="260" rx="16" fill="#3a3f46" stroke="#3f4750" stroke-width="2"/>
+<text x="620" y="106.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Trained GNN (black box)</text>
+<circle cx="500" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="500" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="500" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="315" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<line x1="512" y1="150" x2="608" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="150" x2="728" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="150" x2="608" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="205" x2="728" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="150" x2="608" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="260" x2="728" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="150" x2="608" y2="315" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="315" x2="728" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="205" x2="608" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="150" x2="728" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="205" x2="608" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="205" x2="728" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="205" x2="608" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="260" x2="728" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="205" x2="608" y2="315" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="315" x2="728" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="260" x2="608" y2="150" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="150" x2="728" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="260" x2="608" y2="205" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="205" x2="728" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="260" x2="608" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="260" x2="728" y2="260" stroke="#8a929c" stroke-width="1"/>
+<line x1="512" y1="260" x2="608" y2="315" stroke="#8a929c" stroke-width="1"/>
+<line x1="632" y1="315" x2="728" y2="260" stroke="#8a929c" stroke-width="1"/>
+<circle cx="500" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="500" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="500" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="620" cy="315" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="150" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="205" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<circle cx="740" cy="260" r="12" fill="#5a626c" stroke="#cfd6dd" stroke-width="1.5"/>
+<rect x="880" y="70" width="330" height="260" rx="16" fill="#d9f2e3" stroke="#3f4750" stroke-width="2"/>
+<text x="1045" y="106.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#222" text-anchor="middle" font-weight="bold">Tuning prediction</text>
+<path d="M 930 260 Q 1010 120 1090 260" fill="none" stroke="#3f8f63" stroke-width="3"/>
+<line x1="920" y1="260" x2="1170" y2="260" stroke="#3f4750" stroke-width="1.5"/>
+<text x="1045" y="290.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">stimulus (orientation) →</text>
+<line x1="1045" y1="150" x2="1045" y2="260" stroke="#888" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="1130" y="165" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">preferred</text>
+<text x="1130" y="183" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">orientation</text>
+<line x1="364" y1="200" x2="424" y2="200" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="394" y="185.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">input</text>
+<line x1="816" y1="200" x2="874" y2="200" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="845" y="185.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">output</text>
+<rect x="300" y="420" width="440" height="220" rx="16" fill="#ffe4cf" stroke="#3f4750" stroke-width="2"/>
+<text x="520" y="458" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">Integrated gradients:</text>
+<text x="520" y="486" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">wiggle / fade each synapse</text>
+<text x="520" y="512.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">sensitivity per edge, summed along the fade</text>
+<line x1="460.6" y1="587.0" x2="453.8" y2="605.1" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="453.8" y1="605.1" x2="432.4" y2="611.6" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="432.4" y1="611.6" x2="404.5" y2="601.0" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="404.5" y1="601.0" x2="405.1" y2="586.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="405.1" y1="586.3" x2="413.3" y2="565.4" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="413.3" y1="565.4" x2="429.7" y2="559.8" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="429.7" y1="559.8" x2="451.2" y2="569.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="451.2" y1="569.3" x2="460.6" y2="587.0" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="460.6" y1="587.0" x2="404.5" y2="601.0" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="432.4" y1="611.6" x2="413.3" y2="565.4" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="405.1" y1="586.3" x2="451.2" y2="569.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="453.8" y1="605.1" x2="429.7" y2="559.8" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="460.6" cy="587.0" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="453.8" cy="605.1" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="432.4" cy="611.6" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="404.5" cy="601.0" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="405.1" cy="586.3" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="413.3" cy="565.4" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="429.7" cy="559.8" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="451.2" cy="569.3" r="3.8" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<text x="620" y="560" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">edge scores:</text>
+<text x="620" y="580" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">0.9, 0.1, 0.7, ...</text>
+<rect x="800" y="420" width="440" height="220" rx="16" fill="#e9e2f7" stroke="#3f4750" stroke-width="2"/>
+<text x="1020" y="458" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">GNNExplainer:</text>
+<text x="1020" y="486" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">dimmer switch per synapse</text>
+<text x="1020" y="512.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">smallest subcircuit that keeps the prediction</text>
+<line x1="962.4" y1="587.7" x2="950.6" y2="599.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="950.6" y1="599.3" x2="925.0" y2="609.5" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="925.0" y1="609.5" x2="908.9" y2="603.5" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="908.9" y1="603.5" x2="899.3" y2="587.3" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="899.3" y1="587.3" x2="906.9" y2="571.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="906.9" y1="571.2" x2="932.3" y2="561.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="932.3" y1="561.2" x2="951.2" y2="570.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="951.2" y1="570.2" x2="962.4" y2="587.7" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="962.4" y1="587.7" x2="908.9" y2="603.5" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="925.0" y1="609.5" x2="906.9" y2="571.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="899.3" y1="587.3" x2="951.2" y2="570.2" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="950.6" y1="599.3" x2="932.3" y2="561.2" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="962.4" cy="587.7" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="950.6" cy="599.3" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="925.0" cy="609.5" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="908.9" cy="603.5" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="899.3" cy="587.3" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="906.9" cy="571.2" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="932.3" cy="561.2" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="951.2" cy="570.2" r="3.8" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<text x="1120" y="560" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">mask: lit arrows</text>
+<text x="1120" y="580" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">= essential ones</text>
+<line x1="560" y1="330" x2="520" y2="414" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="700" y1="330" x2="1020" y2="414" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<rect x="300" y="700" width="620" height="200" rx="16" fill="#fdf3c8" stroke="#3f4750" stroke-width="2"/>
+<text x="610" y="738.0" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#222" text-anchor="middle" font-weight="bold">Ranked wiring motifs</text>
+<circle cx="360" cy="800" r="12" fill="#a8d8b9" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="430" cy="800" r="12" fill="#cdb8ec" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="372" y1="794" x2="418" y2="794" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="418" y1="806" x2="372" y2="806" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="395" y="845.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">1. reciprocal pair — 0.68</text>
+<circle cx="560" cy="800" r="12" fill="#bcd3f5" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="630" cy="800" r="12" fill="#a8d8b9" stroke="#3f4750" stroke-width="1.5"/>
+<circle cx="700" cy="800" r="12" fill="#f5cfae" stroke="#3f4750" stroke-width="1.5"/>
+<line x1="572" y1="800" x2="618" y2="800" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="642" y1="800" x2="688" y2="800" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="565" y1="812" x2="622" y2="830" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="630" y1="830" x2="694" y2="812" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="630" y="865.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">2. feedforward triplet — 0.57</text>
+<text x="850" y="780" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">...</text>
+<text x="850" y="799" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">aggregated across</text>
+<text x="850" y="818" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">neurons with</text>
+<text x="850" y="837" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222" text-anchor="middle" font-weight="normal">similar tuning</text>
+<line x1="520" y1="640" x2="560" y2="694" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<line x1="1020" y1="640" x2="800" y2="694" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<rect x="980" y="700" width="516" height="200" rx="16" fill="#d9f2e3" stroke="#3f4750" stroke-width="2"/>
+<text x="1238" y="738" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">Ablation test:</text>
+<text x="1238" y="766" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">remove the motif — does accuracy drop?</text>
+<rect x="1030" y="790" width="50" height="70" rx="4" fill="#9aa3ad" stroke="#3f4750" stroke-width="2"/>
+<rect x="1100" y="810" width="50" height="50" rx="4" fill="#4e9a6e" stroke="#3f4750" stroke-width="2"/>
+<text x="1055" y="885.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#222" text-anchor="middle" font-weight="normal">original</text>
+<text x="1125" y="885.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#222" text-anchor="middle" font-weight="normal">ablated</text>
+<circle cx="1430" cy="820" r="34" fill="#d9f2e3" stroke="#4e9a6e" stroke-width="3"/>
+<path d="M 1414 820 l 12 12 l 22 -24" fill="none" stroke="#4e9a6e" stroke-width="4"/>
+<line x1="920" y1="800" x2="974" y2="800" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<rect x="1250" y="420" width="246" height="140" rx="16" fill="white" stroke="#3f4750" stroke-width="2" stroke-dasharray="7,5"/>
+<text x="1373" y="458" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">compare with known</text>
+<text x="1373" y="479" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">wiring rules:</text>
+<text x="1373" y="500" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">like-to-like [7],</text>
+<text x="1373" y="521" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#222" text-anchor="middle" font-weight="normal">inhibitory census [9]</text>
+<line x1="1240" y1="500" x2="1246" y2="500" stroke="#3f4750" stroke-width="2.5" marker-end="url(#ah)"/>
+<rect x="40" y="940" width="1456" height="56" rx="16" fill="#dbeafe" stroke="#3f4750" stroke-width="2"/>
+<text x="768" y="976.0" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#222" text-anchor="middle" font-weight="normal">Paper 2: from black-box predictions to ablation-validated wiring motifs — the transferable currency for Papers 3 and 4</text>
+</svg>
