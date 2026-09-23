@@ -6,6 +6,24 @@
 
 > **Builds on:** Paper 1 (`microns-tuning-from-wiring-benchmark`). Paper 3 (`microns-cross-area-species-generalization`) transfers the motifs we identify, and Paper 4 (`scalable-connectome-gnn-methods`) uses them as a fidelity check. No background in neuroscience or machine learning is assumed — every formal idea is first shown on a tiny wiring diagram you can draw on paper.
 
+## Start here: the math toolkit from zero
+
+Every symbol used later in this document is defined here in plain words, with a tiny numeric example. Nothing below assumes any math background. Come back whenever a symbol looks unfamiliar.
+
+- **Vector.** A short list of numbers in a fixed order, like $(0.30, 0.02, 0.70)$ — one number per edge. The "importance vector" below is exactly such a list.
+- **Matrix.** A table of numbers with rows and columns — a spreadsheet. The adjacency matrix $A$ of a wiring diagram has one row and one column per neuron, with the synapse count in each cell.
+- **Sum (Σ).** $\sum$ means "add these up": $\sum_j w_j$ over weights $(3, 1)$ is $3 + 1 = 4$. A **weighted sum** multiplies each item first: $3 \cdot 1 + 1 \cdot 1 = 4$.
+- **Probability (as a fraction).** A count divided by a total, between 0 and 1. *Example:* 14 of 20 neurons break after ablation: $14/20 = 0.7$.
+- **Expectation (average).** $\mathbb{E}[x]$ or $\bar{x}$ is the ordinary average: add up, divide by count. *Example:* average of $(0.5, 0.1, 0.3, 0.9)$ is $0.45$.
+- **Log₂ and bits.** $\log_2(n)$ is "how many yes/no questions pin down one of $n$ options": $\log_2(8) = 3$. Entropy, $H = -\sum_i p_i \log_2 p_i$, is the average number of questions a random quantity carries; a fair coin has 1 bit.
+- **Graph.** $G = (V, E)$: nodes $V$, arrows $E$, optionally with weights. *Example:* $V = \{A,B,C,D\}$, $E = \{A\to C, B\to C, C\to D\}$ is the napkin used throughout.
+- **Gradient (∂f/∂x).** The gradient $\partial f / \partial x$ is the answer to "if I nudge input $x$ by a tiny amount, how much does the output move?" *Example:* if lowering weight 3 → 2.9 moves the prediction by 0.03, the gradient there is about $0.03/0.1 = 0.3$.
+- **Integral (∫).** $\int_0^1 g(\alpha)\, d\alpha$ means "add up the value of $g$ at every point of a smooth fade from 0 to 1". Think of 100 wiggle measurements averaged together — that sum is the integral.
+- **Element-wise product (⊙).** $A \odot M$ multiplies two tables cell by cell: if $A$ holds arrow weights $(3, 1, 5)$ and $M$ holds dimmer settings $(1, 0, 1)$, the result is $(3, 0, 5)$ — the second arrow is switched off.
+- **L1 norm (‖M‖₁).** $\lVert M \rVert_1$ is the sum of the dial settings: for $M = (1, 0, 1)$ it is $2$. It counts "how many arrows are still lit", which is why it works as a parsimony penalty.
+- **R².** $R^2 = 1 - \frac{\text{model's squared errors}}{\text{squared errors of guessing the average}}$; model errors 0.03 vs. lazy 0.35 give $R^2 \approx 0.91$, and 0 means "no better than the average".
+- **Correlation.** A number in $[-1, 1]$ for "two lists rise and fall together": predictions $(0.4,0.2,0.3,0.8)$ vs. truths $(0.5,0.1,0.3,0.9)$ give $r$ near $+1$.
+
 ## A four-neuron mystery
 
 Draw four dots on paper: A, B, C, D. Draw arrow A → C labeled "3 synapses", B → C labeled "1", and C → D labeled "5". This napkin sketch is a tiny *connectome*: dots are neurons, arrows are synapses. In Paper 1 we built a *graph neural network* (GNN) — a gossip procedure in which each neuron keeps a "note card" of numbers, passes it along arrows weighted by synapse count, and rewrites its card using learned mixing recipes — and trained it to predict each neuron's visual tuning (its favorite pattern, e.g. vertical bars) from the wiring alone [5].
@@ -34,6 +52,12 @@ The formula, then the napkin sentence:
 
 > score(edge) = (x − x₀) · ∫ ∂f/∂x dα — *the total change in the prediction as this connection fades from off to on, accumulated along the whole fade.*
 
+In rendered LaTeX, the identical statement:
+
+$$\mathrm{score}(e) = (x - x_0) \int_0^1 \frac{\partial f\big(\alpha \cdot x\big)}{\partial x}\, d\alpha$$
+
+*Tiny-number check:* if fading edge C→D from 0 to 5 sweeps up sensitivity worth 0.70 of prediction movement (Road 1's erasure experiment), the integral's job is to recover that 0.70 as an accumulated sum over the fade.
+
 Going back to the cake: it is like leaving out one ingredient at a time, but with calculus — fast, and graded rather than all-or-nothing.
 
 ### The many roads to attribution
@@ -44,7 +68,7 @@ Going back to the cake: it is like leaving out one ingredient at a time, but wit
 
 **Road 2: information theory by counting (which edge answers the most questions).** Before any attribution, the prediction could in principle depend on any of the 3 arrows — log2(3) ≈ 1.6 questions of uncertainty about "where the answer comes from". *Worked example:* from Road 1's wiggles, C → D alone changes the prediction by 0.70 of the total 1.02 movement (0.30 + 0.02 + 0.70), i.e. 69% of all the explainable movement; A → C carries 29%; B → C carries 2%. Saying "C → D did it" answers about log2(1/0.69) ≈ 0.5 questions by itself, and the top two edges together cover 98% of the movement — nearly the whole question budget. Integrated gradients' "accumulate along the fade" is this same accounting with finer-grained wiggles. *What this road buys you:* attribution becomes a budget that must sum to 100%, so double-counting and missing credit are visible immediately. *What it costs you:* percentages of movement assume the wiggles add up cleanly; with strong interactions (edges that only matter together) the budget does not partition, and the method tells you so by failing to sum to 100%.
 
-**Road 3: geometry (importance as a direction).** Collect the three wiggle-differences into a point: (0.30, 0.02, 0.70) in "edge space". *Worked example:* the length of this point is sqrt(0.30² + 0.02² + 0.70²) = sqrt(0.09 + 0.0004 + 0.49) ≈ 0.76, and the C → D axis contributes 0.70/0.76 ≈ 92% of the length — the importance vector points almost purely along one axis. Two neurons whose importance vectors point the same way "used the same circuit"; clustering neurons becomes clustering arrows-on-the-compass. *What this road buys you:* attributions across thousands of neurons become points you can compare, rotate, and cluster — the actual aggregation step of this paper. *What it costs you:* distances in edge-space treat all edges as comparable units, which biology may not endorse (a weak inhibitory arrow and a strong excitatory one are not interchangeable).
+**Road 3: geometry (importance as a direction).** Collect the three wiggle-differences into a point: (0.30, 0.02, 0.70) in "edge space". *Worked example:* the length of this point is sqrt(0.30² + 0.02² + 0.70²) = sqrt(0.09 + 0.0004 + 0.49) ≈ 0.76, i.e. $$\lVert v \rVert = \sqrt{\textstyle\sum_i v_i^2} = \sqrt{0.30^2 + 0.02^2 + 0.70^2} \approx 0.76,$$ exactly the arithmetic just done, and the C → D axis contributes 0.70/0.76 ≈ 92% of the length — the importance vector points almost purely along one axis. Two neurons whose importance vectors point the same way "used the same circuit"; clustering neurons becomes clustering arrows-on-the-compass. *What this road buys you:* attributions across thousands of neurons become points you can compare, rotate, and cluster — the actual aggregation step of this paper. *What it costs you:* distances in edge-space treat all edges as comparable units, which biology may not endorse (a weak inhibitory arrow and a strong excitatory one are not interchangeable).
 
 ## Attribution method 2: the "dimmer-switch" test (perturbation-based explanation)
 
@@ -53,6 +77,12 @@ GNNExplainer takes the opposite route. Put a **dimmer switch on every arrow** �
 > **Masked prediction:** ŷ = GNN(A ⊙ M, X), where A is the graph, M is a learned edge mask, and ⊙ means element-wise multiplication.
 >
 > **Plain sentence:** multiply every arrow by its dimmer setting; train the dimmers so the prediction survives while as many arrows as possible go dark; the ones that must stay lit are the important ones.
+
+In rendered LaTeX, with the training objective spelled out:
+
+$$\hat{y} = \mathrm{GNN}(A \odot M,\, X), \qquad \min_{M}\; \mathcal{L}(\hat{y}, y) + \lambda \, \lVert M \rVert_1$$
+
+*Tiny-number check:* for napkin weights $(3, 1, 5)$ and dial settings $M = (1, 0, 1)$, $A \odot M = (3, 0, 5)$ and $\lVert M \rVert_1 = 2$ — the prediction runs on two arrows, and the penalty charges 2 for them.
 
 The two methods answer the same question with different biases — gradients measure *sensitivity*, masks measure *sufficiency* — so this project uses both and cross-checks them (see `docs/METHODS.md`).
 
@@ -127,7 +157,7 @@ flowchart LR
 
 - **Importance score (integrated gradients):** score(edge) = (x − x₀) · ∫ ∂f/∂x dα — *how much the prediction changes as we fade this connection from off to on, accumulated along the whole fade.*
 - **Edge mask (GNNExplainer-style):** minimize over masks M the prediction error of GNN(A ⊙ M) plus a penalty on ‖M‖₁ — *keep the prediction, pay a cost for every arrow you keep lit.*
-- **R² (coefficient of determination):** 1 − (model's error)/(error of always predicting the mean) — *fraction of the variation in tuning the model explains; 0 means "no better than guessing the average."* (Interactive intuition: Seeing Theory, https://seeing-theory.brown.edu/)
+- **R² (coefficient of determination):** 1 − (model's error)/(error of always predicting the mean) In symbols: $$R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2}$$ — with the napkin numbers, $1 - 0.03/0.35 \approx 0.91$. — *fraction of the variation in tuning the model explains; 0 means "no better than guessing the average."* (Interactive intuition: Seeing Theory, https://seeing-theory.brown.edu/)
 - **Faithfulness check:** correlation between attribution rank and the accuracy drop when edges are removed in that order — *trust an explanation only if deleting its "important" arrows hurts.*
 
 ## What success looks like
@@ -137,6 +167,27 @@ Success is not necessarily a big number. Given Paper 1's negative result on the 
 ## Choosing your road
 
 Every core idea above has several doors; one per idea is enough. If you think in experiments, take the finite-difference and ablation roads — attribution by erasing things and counting what breaks. If you think in questions and budgets, take the information-by-counting road, where importance is a percentage of explainable movement. If you think in sets, the minimal-sufficient-subset road defines the explainer mask without a single dial. If you think in negotiations, the two-player best-response road explains what the mask's penalty term is doing and what "converged" means. If you think in pictures, the geometry road turns attribution vectors into compass directions you can cluster. And if you think in diagrams of arrows, the graph-counting and composition roads make motifs — and their transfer to Paper 3 — purely about which roads share a destination. All roads converge on this paper's discipline: an explanation counts only if deleting what it names actually hurts.
+
+## Learn more (verified links)
+
+Each link was checked to load and match the topic.
+
+**Graph theory and GNNs**
+- [Graph theory (Wikipedia)](https://en.wikipedia.org/wiki/Graph_theory) — nodes, edges, subgraphs, and motifs: the formal vocabulary behind every napkin census here.
+- [Kipf & Welling, GCN (arXiv:1609.02907)](https://arxiv.org/abs/1609.02907) — the foundational graph-convolution paper whose message-passing layer is the black box this paper opens.
+
+**Neural networks and gradients**
+- [3Blue1Brown: Neural Networks](https://www.3blue1brown.com/topics/neural-networks) — visual episodes on gradient descent and backpropagation, which is what makes integrated gradients computable at all.
+- [StatQuest video index](https://statquest.org/video-index/) — short lessons on gradients, R-squared, and entropy, all load-bearing concepts in this paper.
+
+**R² and evaluation**
+- [Coefficient of determination (Wikipedia)](https://en.wikipedia.org/wiki/Coefficient_of_determination) — the formal definition and interpretation of the R² used in every ablation check.
+
+**Information theory**
+- [Entropy (information theory) (Wikipedia)](https://en.wikipedia.org/wiki/Entropy_(information_theory)) — Shannon entropy and the log₂ question-counting used in the "which edge answers the most questions" road.
+
+**Negative results in science**
+- [Null result (Wikipedia)](https://en.wikipedia.org/wiki/Null_result) — why a clean explanation of a *negative* result (diffuse, unstable attributions) counts as success here.
 
 ## References
 
