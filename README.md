@@ -1,5 +1,10 @@
 # MICrONS Connectome-GNN Interpretability (Paper 2)
 
+
+![Concept figure: features learned by a GNN from the connectome are compared against known wiring rules to test whether the model rediscovers biological principles](figures/01-concept-schematic.png)
+
+*Figure 1: Features learned by a GNN from the connectome are compared against known wiring rules to test whether the model rediscovers biological principles. (Editable Mermaid source: [figures/concept_figure.md](figures/concept_figure.md).)*
+
 This independent research repository plans and tracks an interpretability analysis of the Paper 1 connectome GNNs: which graph features carry functional information, and how they relate to known wiring rules. It provides interpretability utilities for transparent review and extension.
 
 ## Series position
