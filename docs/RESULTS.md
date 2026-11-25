@@ -1,4 +1,4 @@
-# Results — MICrONS Connectome-GNN Interpretability (Paper 2)
+# Results — MICrONS Connectome-GNN Interpretability
 
 This document pre-registers the results package in paper style: every
 table and figure below is captioned and mapped to the issue that
@@ -7,18 +7,18 @@ analysis is run. Tables 1–5 are **placeholders** whose cells fill in as
 the corresponding issues close; Table 6 records completed validation
 work. The attribution-analysis chain is gated on the trained-model
 artifacts of the companion `microns-tuning-from-wiring-benchmark`
-repository (Paper 1).
+repository.
 
 ## Pre-registered tables
 
 **Table 1. Attribution run summary per tuning property.** One row per
-tuning property analyzed on the Paper 1 models: number of graphs
+tuning property analyzed on the companion benchmark models: number of graphs
 attributed, attribution backend(s) applied, null-baseline calibration
 (shuffled-label / randomized-model controls), and the count of motif
 classes surviving null calibration. *Authorized by issue #14 (run
 attribution with null baselines), which depends on #11 (attribution run
 pipeline), in turn on #6 (pre-registered aggregation rule); parent
-umbrella #3. Status: pending — gated on Paper 1 release-harness
+umbrella #3. Status: pending — gated on the companion benchmark's release-harness
 artifacts.*
 
 | Tuning property | Graphs attributed | Backend(s) | Null control | Motif classes passing null calibration |
@@ -100,7 +100,7 @@ files verified bit-identical to the committed blobs by git blob-SHA
 parity (`conftest.py` 9d8929d, `src/__init__.py` 62a5cda,
 `src/attribution.py` b5a0c5a, `tests/test_attribution.py` 1afaab1 @
 `main` a16ebe2). Real-data attribution runs are deferred (needs
-environment/data — Paper 1 release-harness artifacts, issue #3).
+environment/data — the companion benchmark's release-harness artifacts, issue #3).
 
 | Check | Expected (planted ground truth) | Observed | Outcome |
 |---|---|---|---|
